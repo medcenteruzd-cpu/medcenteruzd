@@ -36,7 +36,7 @@ export function getDoctorsDara(t: (key: string) => string) {
       specialty: t("doctors.kobyliakOlenaSpecialty"),
       experience: t("doctors.kobyliakOlenaExperience"),
       practice: t("doctors.kobyliakOlenePractice"),
-      email: "Kobilyakelena@gmail.com",
+      email: "medcenteruzd@gmail.com",
       phone: "+38 067 123 45 67",
       about: t("doctors.kobyliakOlenaAbout"),
       specializations: [

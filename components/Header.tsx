@@ -14,7 +14,7 @@ import AppointmentForm from "@/components/AppointmentForm";
 
 const navLinks = [
   { href: "/", key: "header.mainLink" },
-  { href: "/services", key: "header.servicesLink" },
+  { href: "#services", key: "header.servicesLink" },
   { href: "/doctors", key: "header.doctorsLink" },
   { href: "/price", key: "header.priceLink" },
   { href: "/contacts", key: "header.contactsLink" },
