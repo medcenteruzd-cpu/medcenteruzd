@@ -57,7 +57,7 @@ export default function Footer() {
               className="hover:text-gray-800 transition-colors"
               aria-label="Facebook"
             >
-              <FaFacebookF size={20} />
+              <FaFacebookF size={20} className="text-blue-600" /> 
             </a>
 
             <a
@@ -67,7 +67,7 @@ export default function Footer() {
               className="hover:text-gray-800 transition-colors"
               aria-label="Instagram"
             >
-              <FaInstagram size={20} />
+              <FaInstagram size={20} className="text-pink-500" /> 
             </a>
 
             <a
@@ -75,9 +75,10 @@ export default function Footer() {
               className="hover:text-gray-800 transition-colors"
               aria-label="Viber"
             >
-              <SiViber size={20} />
+              <SiViber size={20} className="text-purple-600" /> 
             </a>
           </div>
+
 
         </div>
       </div>

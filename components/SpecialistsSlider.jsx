@@ -20,7 +20,7 @@ export default function SpecialistsSlider({ slides, onClick }) {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 8000,
     adaptiveHeight: true,
   };
   const { t } = useTranslation("common");
