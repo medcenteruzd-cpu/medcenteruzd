@@ -121,7 +121,8 @@
     "workDay1": "Mon – Fri: 08:00 – 18:00",
     "workDay2": "Sat: 09:00 – 16:00",
     "howToFindUs": "How to Find Us:",
-    "howTitle": "How We Achieve Our Mission"
+    "howTitle": "How We Achieve Our Mission",
+    "locationVideoTitle": "Video demonstration of how to find us:"
   },
   "footer": {
     "footerContactsTitle": "Contacts",

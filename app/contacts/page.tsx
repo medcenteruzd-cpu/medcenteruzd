@@ -1,5 +1,6 @@
 "use client"
 import { useTranslation } from "react-i18next";
+import { FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 
 export default function AboutPage() {
@@ -12,43 +13,43 @@ export default function AboutPage() {
             </h1>
 
             <div className="w-full py-16">
-                <div className="max-w-full mx-auto  grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                    <div className="bg-white dark:bg-[#133b88] rounded-[20px] shadow-lg p-8 text-center transition hover:shadow-xl">
-                        <h2 className="heading-h3 mb-3 ">
-                            {t("contactsPage.telephone")}
-                        </h2>
-                        <a
-                            href="tel:+380674935104"
-                        >
-                            +38&nbsp;067&nbsp;493&nbsp;51&nbsp;04
+                    
+                    <div className="bg-[#133b88] dark:bg-[#133b88] rounded-[20px] shadow-lg p-8 text-center transition-all hover:shadow-xl hover:bg-[#0e2c56]">
+                        <div className="mb-4">
+                            <FaPhoneAlt size={24} className="text-white mx-auto mb-3" />
+                        </div>
+                        <h2 className="heading-h3 text-white mb-3">{t("contactsPage.telephone")}</h2>
+                        <a href="tel:+380674935104" className="text-lg text-white hover:text-gray-200">
+                            +38 067 493 51 04
                         </a>
                     </div>
 
-
-                    <div className="bg-white dark:bg-[#133b88] rounded-[20px] shadow-lg p-8 text-center  transition hover:shadow-xl">
-                        <h2 className="heading-h3 mb-3 ">
-                            {t("contactsPage.address")}
-                        </h2>
-                        <p className=" leading-relaxed">
-                            {t("contactsPage.addressValue")}
-                        </p>
+                    
+                    <div className="bg-[#133b88] dark:bg-[#133b88] rounded-[20px] shadow-lg p-8 text-center transition-all hover:shadow-xl hover:bg-[#0e2c56]">
+                        <div className="mb-4">
+                            <FaMapMarkerAlt size={24} className="text-white mx-auto mb-3" />
+                        </div>
+                        <h2 className="heading-h3 text-white mb-3">{t("contactsPage.address")}</h2>
+                        <p className="text-white leading-relaxed">{t("contactsPage.addressValue")}</p>
                     </div>
 
-
-                    <div className="bg-white dark:bg-[#133b88] rounded-[20px] shadow-lg p-8 text-center  transition hover:shadow-xl">
-                        <h2 className="heading-h3 mb-3 ">
-                            {t("contactsPage.workTime")}
-                        </h2>
-                        <p className=" leading-relaxed">
-                            {t("contactsPage.workDay1")}
-                        </p>
-                        <p className=" leading-relaxed">
-                            {t("contactsPage.workDay2")}
-                        </p>
+               
+                    <div className="bg-[#133b88] dark:bg-[#133b88] rounded-[20px] shadow-lg p-8 text-center transition-all hover:shadow-xl hover:bg-[#0e2c56]">
+                        <div className="mb-4">
+                            <FaClock size={24} className="text-white mx-auto mb-3" />
+                        </div>
+                        <h2 className="heading-h3 text-white mb-3">{t("contactsPage.workTime")}</h2>
+                        <p className="text-white leading-relaxed">{t("contactsPage.workDay1")}</p>
+                        <p className="text-white leading-relaxed">{t("contactsPage.workDay2")}</p>
                     </div>
+
                 </div>
             </div>
+
+
+
 
             <div className="w-full bg-white dark:bg-[#133b88] mb-8 p-2 md:p-8 rounded-[20px] shadow-lg transition hover:shadow-xl overflow-hidden">
                 <h2 className="text-center heading-h3 py-2 md:py-8">
@@ -66,6 +67,8 @@ export default function AboutPage() {
                 </div>
 
                 <div className="w-full mt-6">
+                    <h2 className="text-center heading-h3 py-2 md:py-8"> {t("contactsPage.locationVideoTitle")}</h2>
+
                     <video
                         src="/video/location.mp4"
                         className="w-full h-[300px] md:h-[500px] rounded-lg"
