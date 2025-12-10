@@ -319,6 +319,7 @@ function SpecialistsSection(t: (key: string) => string, setIsModalOpen: (open: b
 
   return (
     <section className="py-16 px-12">
+
       <SpecialistsSlider slides={specialists} onClick={setIsModalOpen} />
     </section>
   );
