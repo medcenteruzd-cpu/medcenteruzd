@@ -27,7 +27,6 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Here you would typically handle form submission, e.g., send data to a server
     console.log("Form submitted:", formData);
 
     alert("✅ Повідомлення успішно надіслано!");
