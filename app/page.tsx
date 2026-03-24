@@ -532,7 +532,7 @@ function ContactsSection(t: (key: string) => string) {
                     className="hover:text-gray-800 transition-colors"
                     aria-label="Viber"
                   >
-                    <SiViber size={20} className="text-purple-600"/>
+                    <SiViber size={20} className="text-purple-600" />
                   </a>
                 </div>
 
@@ -555,7 +555,7 @@ function BookAnAppointmentSection(t: (key: string) => string, setIsModalOpen: (o
       className="relative w-[90%] h-[300px] bg-cover bg-center flex items-center m-auto rounded-[20px] mb-[60px]"
       style={{
         backgroundImage:
-          "url('/imgs/bannerAppointment.jpg')", 
+          "url('/imgs/bannerAppointment.jpg')",
       }}
     >
       <div className="absolute inset-0"></div>
