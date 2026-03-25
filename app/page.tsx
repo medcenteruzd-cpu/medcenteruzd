@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -206,49 +207,7 @@ function ServicesSection(t: (key: string) => string) {
       imgUrl: "/imgs/icon_logomed-3_50.svg",
       price: 600,
       waitTime: 45
-    },
-
-    // {
-    //   title: t("mainPage.servicesSoftTissuesTitle"),
-    //   description: t("mainPage.servicesSoftTissuesDescription"),
-    //   imgUrl: "/imgs/icon_logomed-3_50.svg",
-    //   price: 400,
-    //   waitTime: 29
-    // },
-
-
-    // {
-    //   title: t("mainPage.servicesJointsTitle"),
-    //   description: t("mainPage.servicesJointsDescription"),
-    //   imgUrl: "/imgs/icon_logomed-3_50.svg",
-    //   price: 500,
-    //   waitTime: 15
-    // },
-    // {
-    //   title: t("mainPage.servicesLimbVesselsTitle"),
-    //   description: t("mainPage.servicesLimbVesselsDescription"),
-    //   imgUrl: "/imgs/icon_logomed-3_50.svg",
-    //   price: 400 + 400,
-    //   waitTime: 15
-    // },
-
-    // {
-    //   title: t("mainPage.servicesObGynTitle"),
-    //   description: t("mainPage.servicesObGynDescription"),
-    //   imgUrl: "/imgs/icon_logomed-3_50.svg",
-    //   price: 3100,
-    //   waitTime: 60
-    // },
-    // {
-    //   title: t("mainPage.servicesInternalOrgansTitle"),
-    //   description: t("mainPage.servicesInternalOrgansDescription"),
-    //   imgUrl: "/imgs/icon_logomed-3_50.svg",
-    //   price: 1500,
-    //   waitTime: 30
-    // },
-
-
-
+    }
   ];
 
   const [showAll, setShowAll] = useState(true);
@@ -281,12 +240,6 @@ function ServicesSection(t: (key: string) => string) {
       </div>
 
       <div className="mt-10">
-        {/* <Button variant="primary" size="md"
-          onClick={() => setShowAll(!showAll)}
-        >
-          {showAll ? t("mainPage.collapse") : t("mainPage.showMore")}
-        </Button> */}
-
         <Link href="/price" className="bg-primary hover:bg-[#126fe6] text-whitebg-primary hover:bg-[#126fe6] text-white cursor-pointer inline-flex items-center justify-center font-medium rounded-md transition duration-300 shadow-sm px-5 py-2 text-base">
           {t("mainPage.allservices")}
         </Link>
@@ -436,7 +389,8 @@ function ContactsSection(t: (key: string) => string) {
                     placeholder="Коротко опишіть, що вас цікавить"
                   ></textarea>
                 </div>
-                <button
+                <button 
+                  aria-label="Надіслати"
                   type="submit"
                   className="w-full bg-white hover:bg-[#6476f1] text-[#5397F4] font-semibold py-2 rounded-[5px] transition cursor-pointer"
                   onClick={(e) => {
@@ -563,7 +517,7 @@ function BookAnAppointmentSection(t: (key: string) => string, setIsModalOpen: (o
         <h2 className="text-xl md:text-4xl font-bold mb-4">
           {t("mainPage.bookAppointmentKobyliakUltrasoundUman")}
         </h2>
-        <button onClick={() => setIsModalOpen(true)} className="bg-primary hover:bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition cursor-pointer">
+        <button onClick={() => setIsModalOpen(true)} className="bg-primary hover:bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition cursor-pointer" aria-label={t("btn")}>
           {t("btn")}
         </button>
       </div>
@@ -578,29 +532,70 @@ export default function Home() {
   const { t } = useTranslation("common");
 
   return (
-    <div className="space-y-16">
-      {HeroSection(t, setIsModalOpen)}
-      {AboutAndWhySection(t)}
-      {ServicesSection(t)}
-      {SpecialistsSection(t, setIsModalOpen)}
-      {TestimonialsSection(t)}
-      {ContactsSection(t)}
-      <div className=" w-full h-100">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.175419929347!2d30.21890107592255!3d48.75944627131889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d20da8953e6589%3A0x22e976b0eac83120!2z0JrQsNCx0ZbQvdC10YIg0KPQl9CUINCa0L7QsdC40LvRj9C60LA!5e0!3m2!1suk!2sua!4v1761223967521!5m2!1suk!2sua"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-      {BookAnAppointmentSection(t, setIsModalOpen)}
+    <>
+      <Head>
+        <title>{t("mainPage.title")} | Медичний центр УЗД в Умані</title>
+        <meta name="description" content={t("mainPage.subtitle")} />
+        <meta name="robots" content="index, follow" />
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <AppointmentForm onSuccess={() => setIsModalOpen(false)} />
-      </Modal>
-    </div>
+        {/* Open Graph для соцмереж */}
+        <meta property="og:title" content={`${t("mainPage.title")} | Медичний центр УЗД`} />
+        <meta property="og:description" content={t("mainPage.subtitle")} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:image" content="https://yourdomain.com/imgs/home-kobyliak-igor-2.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${t("mainPage.title")} | Медичний центр УЗД`} />
+        <meta name="twitter:description" content={t("mainPage.subtitle")} />
+        <meta name="twitter:image" content="https://yourdomain.com/imgs/home-kobyliak-igor-2.png" />
+         {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalClinic",
+              "name": "Медичний центр УЗД",
+              "image": "https://yourdomain.com/imgs/home-kobyliak-igor-2.png",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "вул. Шевченка 50",
+                "addressLocality": "Умань",
+                "addressCountry": "UA"
+              },
+              "telephone": "+380674935104",
+              "url": "https://yourdomain.com/"
+            })
+          }}
+        />
+      </Head>
+      <main className="space-y-16">
+        {HeroSection(t, setIsModalOpen)}
+        {AboutAndWhySection(t)}
+        {ServicesSection(t)}
+        {SpecialistsSection(t, setIsModalOpen)}
+        {TestimonialsSection(t)}
+        {ContactsSection(t)}
+        <div className=" w-full h-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.175419929347!2d30.21890107592255!3d48.75944627131889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d20da8953e6589%3A0x22e976b0eac83120!2z0JrQsNCx0ZbQvdC10YIg0KPQl9CUINCa0L7QsdC40LvRj9C60LA!5e0!3m2!1suk!2sua!4v1761223967521!5m2!1suk!2sua"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        {BookAnAppointmentSection(t, setIsModalOpen)}
+
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <AppointmentForm onSuccess={() => setIsModalOpen(false)} />
+        </Modal>
+      </main>
+    </>
+
   );
 }
