@@ -7,8 +7,7 @@ export default function AboutPage() {
     const { t } = useTranslation("common");
     return (
         <section className="min-h-screen  py-12 px-6 md:px-16">
-
-            <h1 className="heading-h1  text-center">
+             <h1 className="heading-h1  text-center">
                 {t("contactsPage.title")}
             </h1>
 
