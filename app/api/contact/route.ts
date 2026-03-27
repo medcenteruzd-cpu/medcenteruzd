@@ -9,13 +9,13 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, 
+        user: process.env.EMAIL_TO, 
         pass: process.env.EMAIL_PASS, 
       },
     });
 
   const mailOptions = {
-      from: `"Uzduman Медцентр" <${process.env.EMAIL_USER}>`,
+      from: `"Uzduman Медцентр" <${process.env.EMAIL_TO}>`,
       to: process.env.EMAIL_TO,
       replyTo: email,
       subject: `🏥 Новий запис: ${name}`,
