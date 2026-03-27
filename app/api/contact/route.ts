@@ -9,13 +9,13 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_TO, 
+        user: process.env.EMAIL_USER, 
         pass: process.env.EMAIL_PASS, 
       },
     });
 
   const mailOptions = {
-      from: `"Uzduman Медцентр" <${process.env.EMAIL_TO}>`,
+      from: `"Uzduman Медцентр" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_TO,
       replyTo: email,
       subject: `🏥 Новий запис: ${name}`,
@@ -128,10 +128,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("ПОМИЛКА РОУТЕРА:", error);
-    return NextResponse.json(
-      { success: false, error: "Помилка при відправці листа" },
-      { status: 500 }
-    );
+    console.error("error:", error);
+    
   }
 }
